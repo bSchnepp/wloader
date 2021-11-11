@@ -1,0 +1,4 @@
+# This will become a CMake file later...
+clang++ -I. -target x86_64-pc-win32-coff -fno-stack-protector -mno-red-zone -c Source/App.cpp
+lld-link -subsystem:efi_application -nodefaultlib -dll -entry:uefi_main App.o -out:App.efi
+rm -rf App.lib App.o
