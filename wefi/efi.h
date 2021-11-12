@@ -4,6 +4,7 @@
 #ifndef EFI_H_
 #define EFI_H_
 
+#include <wefi/efifs.h>
 #include <wefi/efiapi.h>
 #include <wefi/efivid.h>
 #include <wefi/efitypes.h>

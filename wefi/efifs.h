@@ -1,5 +1,5 @@
-#include <efitypes.h>
-#include <efiprotocols.h>
+#include <wefi/efitypes.h>
+#include <wefi/efiprotocols.h>
 
 #ifndef EFIFS_H_
 #define EFIFS_H_
@@ -19,16 +19,10 @@
 #define EFI_FILE_PROTOCOL_REVISION 0x00010000
 #define EFI_FILE_PROTOCOL_REVISION2 0x00020000
 
-typedef EFI_STATUS(EFIAPI* EFI_FILE_OPEN)(IN EFI_FILE_PROTOCOL* This,
-	OUT EFI_FILE_PROTOCOL** NewHandle, IN CHAR16* FileName,
-	IN UINT64 OpenMode, IN UINT64 Attributes);
-
-typedef EFI_STATUS(EFIAPI* EFI_FILE_CLOSE)(IN EFI_FILE_PROTOCOL* This);
-
 typedef struct
 {
 	UINT64 Revision;
-	EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_OPEN_VOLUME OpenVolume;
+	EFI_SIMPLE_FILESYSTEM_PROTOCOL_OPEN_VOLUME OpenVolume;
 } EFI_SIMPLE_FILE_SYSTEM_PROTOCOL;
 
 typedef EFI_STATUS(EFIAPI* EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_OPEN_VOLUME)(
